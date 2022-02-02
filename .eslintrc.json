@@ -1,0 +1,3 @@
+{ "extends": ["@verkstedt/verkstedt/vanilla"],
+    "parserOptions": { "ecmaVersion": 2020 }
+}

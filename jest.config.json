@@ -1,0 +1,5 @@
+{
+  "transform": {},
+  "moduleFileExtensions": [ "js", "mjs" ],
+  "testMatch": [ "**/*.test.js", "**/*.test.mjs" ]
+}
