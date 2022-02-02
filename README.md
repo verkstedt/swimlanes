@@ -26,6 +26,23 @@ Options:
   --file, -f      Read input from a file
 ```
 
+API
+---
+
+```js
+import {
+  createSwimlanesHash,
+  createSwimlanesUrl,
+  decodeSwimlanesHash,
+  decodeSwimlanesUrl
+} from '@verkstedt/swimlanes'
+
+createSwimlanesHash('title: Hello World') // → K8ksyUm1UvBIzcnJVwjPL8pJAQA=
+createSwimlanesUrl('title: Hello World')  // → https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=
+decodeSwimlanesHash('K8ksyUm1UvBIzcnJVwjPL8pJAQA=')                       // → title: Hello World
+decodeSwimlanesHash('https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=') // → title: Hello World
+```
+
 License
 -------
 

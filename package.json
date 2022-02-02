@@ -9,7 +9,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "bin": {
-    "swimlanes": "index.mjs"
+    "swimlanes": "cli.mjs"
   },
   "repository": {
     "type": "git",
