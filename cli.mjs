@@ -100,8 +100,10 @@ const presentResult = (rawResult) => {
 
 const main = async () => {
   const input = normaliseInput(await getInput())
-  if (opts.help || !input) {
+  if (opts.help || (!input && opts.noOpen)) {
     printHelp()
+  } else if (!input) {
+    open(URL_BASE)
   } else {
     const result = processInput(input)
     presentResult(result)
