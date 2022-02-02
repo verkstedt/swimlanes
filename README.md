@@ -38,9 +38,9 @@ import {
 } from '@verkstedt/swimlanes'
 
 createSwimlanesHash('title: Hello World') // → K8ksyUm1UvBIzcnJVwjPL8pJAQA=
-createSwimlanesUrl('title: Hello World')  // → https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=
-decodeSwimlanesHash('K8ksyUm1UvBIzcnJVwjPL8pJAQA=')                       // → title: Hello World
-decodeSwimlanesHash('https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=') // → title: Hello World
+createSwimlanesUrl('title: Hello World').toString() // → https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=
+decodeSwimlanesHash('K8ksyUm1UvBIzcnJVwjPL8pJAQA=') // → title: Hello World
+decodeSwimlanesUrl(new URL('https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=')) // → title: Hello World
 ```
 
 License
