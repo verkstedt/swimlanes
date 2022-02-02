@@ -72,7 +72,7 @@ const getInput = async () => {
   } else {
     ;[input] = opts._
   }
-  if (!process.stdin.isTTY) {
+  if (!input && !process.stdin.isTTY) {
     // FIXME
     input = await readStdIn()
   }
