@@ -71,7 +71,7 @@ const normaliseInput = (rawInput) => {
 const getInput = async () => {
   let input
   if (opts.file) {
-    input = fs.readFileSync(opts.file)
+    input = fs.readFileSync(opts.file).toString()
   } else {
     ;[input] = opts._
   }
