@@ -1,6 +1,6 @@
 {
   "name": "@verkstedt/swimlanes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open sequence diagrams stored in text files on https://swimlanes.io",
   "module": "index.mjs",
   "scripts": {
