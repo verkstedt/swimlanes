@@ -2,5 +2,5 @@
 Type=Application
 Name=Swimlanes.io
 MimeType=text/x-swimlanes.io
-Exec=/home/saji/src/@verkstedt/swimlanes/cli.mjs -f %f
+Exec=swimlanes -f %f
 StartupNotify=true
