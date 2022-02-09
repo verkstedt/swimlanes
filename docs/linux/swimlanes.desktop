@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Swimlanes.io
-MimeType=text/x-swimlanes.io
 Exec=swimlanes -f %f
-StartupNotify=true
+Icon=go-last
+StartupNotify=false
+MimeType=text/x-swimlanes.io
