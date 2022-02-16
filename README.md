@@ -48,7 +48,8 @@ Set up as handler for `*.swimlanes` files
 
 Instructions for:
 
-- [./docs/linux](Linux)
+- [Linux](./docs/linux)
+
 - (PRs for macOS and Windows welcome)
 
 License
