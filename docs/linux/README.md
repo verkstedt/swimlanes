@@ -1,5 +1,6 @@
 Registering as a file handler on Linux
 ======================================
+Clone the repo, and go to `docs/linux`
 
 ```sh
 sudo npm install -g @verkstedt/swimlanes
