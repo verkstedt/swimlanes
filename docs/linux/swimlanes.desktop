@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Swimlanes.io
-Exec=/usr/bin/swimlanes -f %f
+Exec=swimlanes -f %f
 Icon=go-last
 StartupNotify=false
 MimeType=text/x-swimlanes.io
