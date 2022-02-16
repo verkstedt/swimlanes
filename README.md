@@ -43,6 +43,15 @@ decodeSwimlanesHash('K8ksyUm1UvBIzcnJVwjPL8pJAQA=') // → title: Hello World
 decodeSwimlanesUrl(new URL('https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=')) // → title: Hello World
 ```
 
+Set up as handler for `*.swimlanes` files
+-----------------------------------------
+
+Instructions for:
+
+- [Linux](./docs/linux)
+
+- (PRs for macOS and Windows welcome)
+
 License
 -------
 
