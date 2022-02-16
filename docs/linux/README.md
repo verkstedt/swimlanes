@@ -1,5 +1,6 @@
 Registering as a file handler on Linux
 ======================================
+
 Clone the repo, and go to `docs/linux`
 
 ```sh
@@ -19,3 +20,6 @@ xdg-mime default swimlanes.desktop text/x-swimlanes.io
 # Test
 xdg-open example.swimlanes
 ```
+
+It might take few minutes for the app to show up in Applications and
+being picked up by your file manager. Re–login if you are impatient.
