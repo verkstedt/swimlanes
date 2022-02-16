@@ -32,7 +32,7 @@ For example:
 ### Install script
 
 This will create a `.desktop` file to add Swimlanes.io to your Applications
-menu, add a mime type, and set it as default for `.swimlane` files.
+menu, add a mime type, and set it as default for `.swimlanes` files.
 
 ```bash
 curl -s https://raw.githubusercontent.com/verkstedt/swimlanes/main/docs/linux/install.sh | sh -
