@@ -38,7 +38,7 @@
     "pako": "^2.0.4"
   },
   "devDependencies": {
-    "@verkstedt/eslint-config-verkstedt": "^9.0.2",
+    "@verkstedt/eslint-config-verkstedt": "^10.0.2",
     "eslint": "^8.8.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7"
