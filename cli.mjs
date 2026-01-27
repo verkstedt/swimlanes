@@ -31,7 +31,7 @@ const printHelp = () => {
     .readFileSync(new URL('./README.md', import.meta.url))
     .toString()
   const usageSection = readme
-    .match(/^(?:Usage\n---+)$(.*?)(?:[^\n]*\n---+)/ms)[1]
+    .match(/^(?:## Usage\n+)$(.*?)(?:\n#+ )/ms)[1]
     .replace(/^```[a-z]*$/gm, '')
     .trim()
   process.stdout.write(`${usageSection}\n`)
