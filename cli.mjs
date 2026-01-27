@@ -5,6 +5,7 @@ import fs from 'fs'
 import getopts from 'getopts'
 import open from 'open'
 
+import { URL_BASE } from './lib/consts.mjs'
 import encode from './lib/encode.mjs'
 import decode from './lib/decode.mjs'
 import getHashFromUrl from './lib/getHashFromUrl.mjs'
