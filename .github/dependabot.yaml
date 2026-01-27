@@ -1,0 +1,33 @@
+# Default dependabot configuration
+#
+# This file has been created from
+# https://github.com/verkstedt/.github/blob/main/templates/dependabot.yaml
+#
+# IMPORTANT: This does not affect creation of PRs with security updates.
+# That is configured on GitHub settings and should be done on the
+# organization level, if possible.
+#
+# IF YOU MODIFY IT IN ANY WAY, DESCRIBE IT IN THE COMMENT HERE
+# to make updating in the future easier.
+
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'quarterly'
+      time: '12:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'quarterly'
+      time: '12:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7

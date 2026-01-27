@@ -16,13 +16,14 @@
     "url": "git+https://github.com/verkstedt/swimlanes.git"
   },
   "keywords": [
-    "swimlanes-io",
-    "swimlanes",
-    "sequence",
+    "decode",
     "diagram",
-    "open",
     "encode",
-    "decode"
+    "open",
+    "sequence",
+    "swimlanes",
+    "swimlanes-io",
+    "swimlanesio"
   ],
   "author": "Verkstedt <info@verkstedt.com>",
   "license": "ISC",
@@ -41,5 +42,8 @@
     "eslint": "^8.8.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7"
+  },
+  "config": {
+    "setup-repo-version": "1.1.6+git.205753b"
   }
 }

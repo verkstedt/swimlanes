@@ -1,0 +1,62 @@
+name: 'CI'
+
+# Detect interesting npm scripts and run them.
+#
+# You might need to rename some of your npm scripts!
+# See https://github.com/verkstedt/actions#ci
+#
+# This file has been created from
+# https://github.com/verkstedt/.github/blob/main/workflow-templates/ci.yaml
+#
+# IF YOU MODIFY IT IN ANY WAY, DESCRIBE IT IN THE COMMENT HERE
+# to make updating in the future easier.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: 'CI'
+    uses: verkstedt/actions/.github/workflows/ci.yaml@v1
+    secrets: inherit
+    with:
+      working-directory: .
+
+  # If you need to run additional things, run then _after_ `ci` to make
+  # sure we use its cache, e.g.:
+  #
+  # lint-something-else:
+  #   name: 'Lint something else'
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - ci
+  #   steps:
+  #     - name: Setup
+  #       uses: verkstedt/actions/setup@v1
+  #       with:
+  #         working-directory: .
+  #     - name: Lint something else
+  #       working-directory: .
+  #       run: npm run lint:something-else
+
+  notify-main-branch-failure:
+    name: Notify about failure on main branch
+    needs:
+      - ci
+      # If you add any new jobs, also add them here:
+      #- lint-something-else
+    if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+    uses: verkstedt/actions/.github/workflows/notify-main-branch-failure.yaml@v1
+    secrets: inherit

@@ -1,0 +1,28 @@
+name: 'Jira integration'
+
+# Move Jira issues when PRs are created, published or merged.
+#
+# Requires some secrets and/or vars!
+# See https://github.com/verkstedt/actions#jira
+#
+# This file has been created from
+# https://github.com/verkstedt/.github/blob/main/workflow-templates/jira.yaml
+#
+# IF YOU MODIFY IT IN ANY WAY, DESCRIBE IT IN THE COMMENT HERE
+# to make updating in the future easier.
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - closed
+      - reopened
+      - ready_for_review
+      - converted_to_draft
+
+jobs:
+  jira:
+    name: 'Move jira issues'
+    uses: verkstedt/actions/.github/workflows/jira.yaml@v1
+    secrets: inherit

@@ -1,15 +1,26 @@
-`@verkstedt/swimlanes`
-======================
+# `@verkstedt/swimlanes`
 
-Installation
-------------
+Open sequence diagrams stored in text files on https://swimlanes.io
+
+## Links
+
+_TODO Add links to relevant resources_
+
+<!--
+- [🗪 Chat](https://app.slack.com/TODO)
+- [🗒 Tasks](TODO)
+- [👆 Client repository](https://github.com/verkstedt.com/TODO)
+- [📚 Docs](TODO)
+- [📁 Files](TODO)
+-->
+
+## Installation
 
 ```sh
 npm install -g @verkstedt/swimlanes
 ```
 
-Usage
------
+## Usage
 
 ```terminal
 Encode text (opens browser by default):
@@ -26,25 +37,25 @@ Options:
   --file, -f      Read input from a file
 ```
 
-API
----
+## API
 
 ```js
 import {
   createSwimlanesHash,
   createSwimlanesUrl,
   decodeSwimlanesHash,
-  decodeSwimlanesUrl
+  decodeSwimlanesUrl,
 } from '@verkstedt/swimlanes'
 
 createSwimlanesHash('title: Hello World') // → K8ksyUm1UvBIzcnJVwjPL8pJAQA=
 createSwimlanesUrl('title: Hello World').toString() // → https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=
 decodeSwimlanesHash('K8ksyUm1UvBIzcnJVwjPL8pJAQA=') // → title: Hello World
-decodeSwimlanesUrl(new URL('https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=')) // → title: Hello World
+decodeSwimlanesUrl(
+  new URL('https://swimlanes.io/#K8ksyUm1UvBIzcnJVwjPL8pJAQA=')
+) // → title: Hello World
 ```
 
-Set up as handler for `*.swimlanes` files
------------------------------------------
+## Set up as handler for `*.swimlanes` files
 
 Instructions for:
 
@@ -52,7 +63,6 @@ Instructions for:
 
 - (PRs for macOS and Windows welcome)
 
-License
--------
+## License
 
-Copyright 2022 Verkstedt <info@verkstedt.com>. Licensed under [ISC license](./LICENSE).
+[ISC](./LICENSE)

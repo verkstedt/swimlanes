@@ -1,0 +1,51 @@
+name: 'Create Release'
+
+# Push a commit bumping up the version
+#
+# Requires some secrets and/or vars
+# and setting up a GitHub app in an organisation.
+# See https://github.com/verkstedt/actions#create-release
+#
+# This file has been created from
+# https://github.com/verkstedt/.github/blob/main/workflow-templates/create-release.yaml
+#
+# IF YOU MODIFY IT IN ANY WAY, DESCRIBE IT IN THE COMMENT HERE
+# to make updating in the future easier.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-type:
+        description: 'Type of release (major, minor, patch, or prerelease)'
+        type: string
+        default: 'patch'
+      dry-run:
+        description: 'Dry–run'
+        type: boolean
+        default: false
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: 'Create release'
+    uses: verkstedt/actions/.github/workflows/create-release.yaml@v1
+    secrets:
+      GITHUB_APP_PRIVATE_KEY: ${{ secrets.CREATE_RELEASE_APP_PRIVATE_KEY }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      GH_NPM_REGISTRY_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_NPM_REGISTRY_PERSONAL_ACCESS_TOKEN }}
+    with:
+      release-type: '${{ github.event.inputs.release-type }}'
+      dry-run: ${{ github.event.inputs.dry-run == 'true' }}
+      github-app-id: ${{ vars.CREATE_RELEASE_APP_ID }}
+      slack-channel-id: ${{ vars.SLACK_CHANNEL_ID }}
+
+  notify-failure:
+    name: 'Notify about failure'
+    needs:
+      - release
+    if: failure() && inputs.dry-run != true
+    uses: verkstedt/actions/.github/workflows/notify-main-branch-failure.yaml@v1
+    secrets: inherit
