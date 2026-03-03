@@ -1,5 +1,13 @@
 # `@verkstedt/swimlanes`
 
+> [!WARNING]
+> This package is _deprecated_.
+> Recommend using [mermaid] instead of [swimlanes].
+> You can edit diagrams embedded in markdown using VSCode with an extension.
+
+[mermaid]: https://mermaid.live/edit
+[swimlanes]: https://swimlanes.io
+
 Open sequence diagrams stored in text files on https://swimlanes.io
 
 ## Links
